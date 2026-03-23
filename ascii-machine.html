@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII Machine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-VwDHS2XZkJ3NIuk0kygDXD7b5v_xSGXSLg&s);
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 80%;
+            margin: 50px auto;
+       
+        
+            
+        }
+
+        h1 {
+
+            border: solid black 7px;
+            border-radius: 13px;
+            padding: 5px;
+            display: inline-block;
+            background-color: #FFFFFF;
+            color: #000000;
+           
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 10px;
+            display: flex;
+
+        }
+
+        select,
+        button {
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+        }
+
+        button {
+            background-color: #d11414;
+            color: #FFFFFF;
+            border: none;
+            width: 200px;
+            padding-left: 60px;
+        }
+
+        #div_output {
+          
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            width: 400px;
+            height: 100px;
+
+            margin-left: 400px;
+            background-color: #ffffff;
+            border: 1px solid #63666A;
+            text-align: center;
+            display: none;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <h1>ASCII Machine</h1>
+        <input id="input_ascii" type="text" placeholder="Digite um caracter" maxlength="1">
+        <br><br>
+        <button onclick="converterCaracter()">Converter</button>
+        <div id="div_output"></div>
+    </div>
+</body>
+
+<script>
+
+    let anterior =  ''
+    function converterCaracter() {
+
+        div_output.innerHTML = '';
+
+        var caractere = input_ascii.value;
+        var decimal = caractere.charCodeAt();
+
+        div_output.style.display = 'block';
+
+        div_output.innerHTML += "<b>Decimal: </b>" + decimal + '<br>';
+        div_output.innerHTML += "<b>Binário: </b>" + decimal.toString(2) + '<br>';
+        div_output.innerHTML += "<b>Hexadecimal: </b>" + decimal.toString(16) + '<br>';
+    }
+</script>
+
+</html>
